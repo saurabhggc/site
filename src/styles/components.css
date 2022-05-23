@@ -1,0 +1,26 @@
+@tailwind components;
+
+.prose div[data-rehype-pretty-code-fragment] {
+  @apply relative;
+}
+
+.prose div[data-rehype-pretty-code-title] {
+  @apply absolute right-[1.5em] top-[1em] z-10 font-mono text-base text-gray-200;
+}
+
+.prose pre {
+  @apply px-0;
+}
+
+.prose pre > code {
+  display: grid;
+  line-height: 1.6;
+}
+
+.prose pre > code .line {
+  @apply px-[1.5em];
+}
+
+.prose blockquote {
+  @apply border-l-current text-xl font-normal not-italic !leading-snug lg:text-2xl;
+}

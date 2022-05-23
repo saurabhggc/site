@@ -1,0 +1,33 @@
+---
+title: 'Automatic Class Sorting with Prettier'
+description: 'How to auto import components in react with without and without trouble and also learn to use typescript and with the addition of somethings very random.'
+publishedAt: 2019-02-02
+---
+
+# Hello
+
+```js
+const Post = defineDocumentType(() => ({
+  name: 'Post',
+  filePathPattern: 'posts/*.mdx',
+  contentType: 'mdx',
+
+  fields: {
+    title: { type: 'string', required: true },
+    publishedAt: { type: 'date', required: true },
+    description: { type: 'string', required: true },
+  },
+
+  computedFields: {
+    slug: {
+      type: 'string',
+      resolve: (post) => post._raw.sourceFileName.replace(/\.mdx$/, ''),
+    },
+    formattedDate: {
+      type: 'string',
+      resolve: ({ publishedAt }) =>
+        format(parseISO(publishedAt), 'dd MMMM, yyy'),
+    },
+  },
+}))
+```
